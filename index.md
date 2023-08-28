@@ -8,4 +8,4 @@ permalink: /
 
 H3ll0 W0rld
 
-<p>@{{layout.admin}}</p>
+
