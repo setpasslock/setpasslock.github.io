@@ -9,4 +9,4 @@ user: @setpasslock
 
 H3ll0 W0rld
 
-<p>{{ layout.user }}</p>
+<p>layout.user</p>
