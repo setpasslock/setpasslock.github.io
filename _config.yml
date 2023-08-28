@@ -11,5 +11,8 @@
 #style: light # dark (default) or light
 #listen_for_clients_preferred_style: true # true or false (default)
 
+page_excerpts: true
+
+
 plugins:
   - jekyll-seo-tag
