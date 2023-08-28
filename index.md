@@ -6,6 +6,4 @@ permalink: /
 
 # L0rem ipsum
 
-H3ll0 W0rld ------------- zey
-
-# Lorem lorem
+H3ll0 W0rld
