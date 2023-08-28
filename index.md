@@ -1,5 +1,5 @@
 ---
-title: /
+title: /home/setpasslock
 layout: home
 permalink: /
 ---
