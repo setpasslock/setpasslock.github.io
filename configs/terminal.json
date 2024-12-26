@@ -29,7 +29,7 @@
             "delay": 1500
           },
           {
-            "text": "yd@arch$> ./prepare_loader payload.bin stub.json | curl -X POST http://10.243.200.246:3000/api/upload -H \"Content-Type: application/json\" --data @-",
+            "text": "yd@arch$> ./prepare_loader payload.bin stub.json --output agent && cat agent | curl -X POST http://10.243.200.246:3000/api/upload -H \"Content-Type: application/json\" --data @-",
             "typing": true,
             "delay": 1500
           },
