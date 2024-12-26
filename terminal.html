@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body class="theme-matrix">
+    <div class="theme-selector">
+        <button class="theme-menu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+        </button>
+        <div class="theme-buttons">
+            <button class="theme-button" data-theme="matrix">Matrix</button>
+            <button class="theme-button" data-theme="solarized">Solarized</button>
+            <button class="theme-button" data-theme="blueteam">Blue Team</button>
+        </div>
+    </div>
+
+    <div class="terminal-container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-button close"></span>
+                    <span class="terminal-button minimize"></span>
+                    <span class="terminal-button maximize"></span>
+                </div>
+                <div class="terminal-title">visitor@system:~</div>
+            </div>
+            
+            <div class="terminal-content">
+                <div id="terminalText"></div>
+                <div class="command-section">
+                    <div class="command-input">
+                        <span class="prompt">visitor@system:~$</span>
+                        <input type="text" id="commandInput" autocomplete="off" autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-nav">
+        <a href="/blog.html" class="quick-link">BLOG</a>
+        <a href="/" class="quick-link">HOME</a>
+        <a href="/about.html" class="quick-link">ABOUT</a>
+        <a href="/projects.html" class="quick-link">PROJECTS</a>
+    </div>
+
+    <script src="js/theme-manager.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>
