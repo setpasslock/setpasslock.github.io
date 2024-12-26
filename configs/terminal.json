@@ -1,0 +1,59 @@
+{
+    "scenarios": [
+      {
+        "name": "NodeJS Vulnerability",
+        "sequence": [
+          {
+            "text": "> VPN Access successful.. ",
+            "typing": true,
+            "delay": 1000
+          },
+          {
+            "text": "yd@arch$> sudo nmap -Pn -sV 10.243.200.246",
+            "typing": true,
+            "delay": 800
+          },
+          {
+            "text": "Starting Nmap 7.94 ( https://nmap.org )\nScanning 10.243.200.246 [1000 ports]\n    PORT      STATE    SERVICE     VERSION\n    22/tcp    open     ssh         OpenSSH 8.2p1\n    80/tcp    open     http        Apache/2.4.41\n    3000/tcp  open     http        Node.js Express\n    5432/tcp  filtered postgresql  PostgreSQL DB\n\nNmap done: 1 IP address (1 host up) scanned in 3.52 seconds",
+            "typing": false,
+            "delay": 2000
+          },
+          {
+            "text": "yd@arch$> python3 nodescan.py -h 10.243.200.246 -p 3000\nStarting vulnerability scan on Node.js service...",
+            "typing": true,
+            "delay": 1200
+          },
+          {
+            "text": "[+] Initiating scan on 10.243.200.246:3000\n[+] Detected potentially dangerous `eval()` usage in application logic\n[+] Warning: Unvalidated input passed to `eval()`\n[+] Exploitation possible: Remote Code Execution (RCE) achievable via crafted payloads\n",
+            "typing": false,
+            "delay": 1500
+          },
+          {
+            "text": "yd@arch$> ./prepare_loader payload.bin stub.json | curl -X POST http://10.243.200.246:3000/api/upload -H \"Content-Type: application/json\" --data @-",
+            "typing": true,
+            "delay": 1500
+          },
+          {
+            "text": "[+] Generating shellcode...\n[+] Obfuscating payload...\n[+] Encoding payload...\n[+] Being inject...\n{ \"status\": \"success\", \"data\": { \"fileId\": \"a7f8d9b2-1234-4f56-7890-abcdef123456\", \"uploadTime\": \"%%DYNAMIC_DATE%%\" } }",
+            "typing": false,
+            "delay": 2000
+          },
+          {
+            "text": "yd@arch$> sudo agent-handler --listen 443\nListening on 0.0.0.0 443\n[!] Connection received from 10.243.200.246:39812",
+            "typing": true,
+            "delay": 2000
+          },
+          {
+            "text": "[+] Reverse shell established",
+            "typing": false,
+            "delay": 500
+          },
+          {
+            "text": "$ whoami\nvisitor",
+            "typing": true,
+            "delay": 1000
+          }
+        ]
+      }
+    ]
+  }
