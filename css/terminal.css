@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Fira Code', monospace;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.terminal-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 80px; /* Menü için alan */
+    height: 100vh;
+}
+
+.terminal {
+    width: 95%;
+    max-width: 1200px;
+    height: 85vh;
+    background-color: var(--terminal-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(var(--text-color), 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-header {
+    background-color: var(--terminal-bg);
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 15px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    color: var(--text-color);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.terminal-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+#terminalText {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.terminal-line {
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.command-section {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--terminal-bg);
+    padding: 5px 0;
+    border-top: 1px solid rgba(var(--text-color), 0.1);
+}
+
+.command-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+}
+
+.prompt {
+    color: var(--text-color);
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+#commandInput {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    width: 100%;
+    outline: none;
+    padding: 4px 0;
+}
+
+.command-output {
+    padding-left: 20px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+.quick-nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+
+.quick-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.quick-link:hover {
+    opacity: 1;
+    border-color: var(--text-color);
+}
+
+/* Scrollbar stilleri */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-dim);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+}
+
+.error-text {
+    color: red;
+    font-weight: bold;
+}

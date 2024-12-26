@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Fira Code', monospace;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.login-screen {
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 100px;
+    scroll-behavior: smooth;
+}
+
+.terminal-login {
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+    margin: 0 auto;
+    position: relative;
+}
+
+.terminal-line {
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}
+
+.access-text {
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.access-text.show {
+    opacity: 1;
+}
+
+.access-granted {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    animation: pulse 2s infinite;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.enter-button {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 2px solid var(--text-color);
+    padding: 10px 25px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-shadow: var(--text-shadow);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.enter-button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.quick-nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+}
+
+.quick-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+    background-color: var(--bg-color);
+}
+
+.quick-link:hover {
+    opacity: 1;
+    border-color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 10px var(--text-shadow);
+}
+
+/* Animasyonlar */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes pulse {
+    0% { text-shadow: var(--text-shadow); }
+    50% { text-shadow: 0 0 20px currentColor; }
+    100% { text-shadow: var(--text-shadow); }
+}
+
+/* Scrollbar stilleri */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-dim);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+}
+
+/* Tema seçici */
+.theme-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-menu-icon {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.theme-menu-icon:hover {
+    opacity: 1;
+}
+
+.theme-menu-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+.theme-buttons {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--terminal-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 120px;
+}
+
+.theme-buttons.show {
+    display: flex;
+}
+
+.theme-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    text-align: left;
+    border-radius: 2px;
+}
+
+.theme-button:hover {
+    opacity: 1;
+    background-color: var(--border-glow);
+}
+
+.theme-button.active {
+    opacity: 1;
+    background-color: var(--border-glow);
+}

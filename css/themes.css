@@ -1,0 +1,105 @@
+/* Tema tanımlamaları */
+/* Matrix */
+.theme-matrix {
+    --bg-color: #000000;
+    --text-color: #00ff00;
+    --text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    --terminal-bg: #0a0a0a;
+    --text-dim: #1f991f;
+    --text-error: #ff3333;
+    --border-glow: rgba(0, 255, 0, 0.3);
+}
+
+/* Solarized Dark */
+.theme-solarized {
+    --bg-color: #002b36;
+    --text-color: #fdf6e3;
+    --text-shadow: 0 0 10px rgba(253, 246, 227, 0.3);
+    --terminal-bg: #073642;
+    --text-dim: #93a1a1;
+    --text-error: #dc322f;
+    --border-glow: rgba(253, 246, 227, 0.2);
+}
+
+/* Blue Team */
+.theme-blueteam {
+    --bg-color: #0d1117;
+    --text-color: #58a6ff;
+    --text-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
+    --terminal-bg: #161b22;
+    --text-dim: #8b949e;
+    --text-error: #f85149;
+    --border-glow: rgba(88, 166, 255, 0.2);
+}
+
+/* Tema Seçici */
+.theme-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-menu-icon {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.theme-menu-icon:hover {
+    opacity: 1;
+}
+
+.theme-menu-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+.theme-buttons {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--terminal-bg);
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 5px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 120px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.theme-buttons.show {
+    display: flex;
+}
+
+.theme-button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    text-align: left;
+    border-radius: 2px;
+}
+
+.theme-button:hover {
+    opacity: 1;
+    background-color: var(--border-glow);
+}
+
+.theme-button.active {
+    opacity: 1;
+    background-color: var(--border-glow);
+}
