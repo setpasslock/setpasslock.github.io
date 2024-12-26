@@ -91,9 +91,12 @@ class BlogManager {
     handleCommand(command) {
         switch (command.toLowerCase()) {
             case 'cd ..':
-            case 'cd..':
-                this.showList();
-                history.pushState({}, '', window.location.pathname);
+                if (!this.blogContent.classList.contains('hidden')) {
+                    this.showList();
+                    history.pushState({}, '', window.location.pathname);
+                } else {
+                    window.location.href = 'terminal.html';
+                }
                 break;
             case 'clear':
                 this.clearTerminal();
@@ -101,8 +104,16 @@ class BlogManager {
             case 'help':
                 this.showHelp();
                 break;
+            case '':
+                break;
+            case 'ls':
+            case 'ls -la':
+            case 'ls -lah':
+                this.renderBlogList();
+                break;
             default:
                 this.showError(`Command not found: ${command}`);
+                break;
         }
     }
 
@@ -123,6 +134,7 @@ class BlogManager {
                     cd ..     - Return to blog list
                     clear    - Clear terminal
                     help     - Show this help message
+                    ls       - List blogs
                 </div>
             </div>
         `;
