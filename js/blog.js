@@ -19,7 +19,7 @@ class BlogManager {
 
     async loadBlogConfig() {
         try {
-            const response = await fetch('blog/config.json');
+            const response = await fetch('configs/blog.json');
             if (!response.ok) throw new Error('Failed to load blog config');
             
             const config = await response.json();
