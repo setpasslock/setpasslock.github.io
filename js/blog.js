@@ -102,7 +102,7 @@ class BlogManager {
                 this.clearTerminal();
                 break;
             case 'help':
-                this.showHelp();
+                // this.showHelp();
                 break;
             case '':
                 break;
@@ -111,6 +111,10 @@ class BlogManager {
             case 'ls -lah':
                 this.renderBlogList();
                 break;
+            case 'home':
+            case 'cd /home':
+                window.location.href = "/";
+                break
             default:
                 this.showError(`Command not found: ${command}`);
                 break;
@@ -134,7 +138,6 @@ class BlogManager {
                     cd ..     - Return to blog list
                     clear    - Clear terminal
                     help     - Show this help message
-                    ls       - List blogs
                 </div>
             </div>
         `;
