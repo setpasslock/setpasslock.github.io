@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Fira Code', monospace;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.terminal {
+    background-color: var(--terminal-bg);
+    border-radius: 10px;
+    border: 1px solid var(--text-color);
+    box-shadow: 0 0 20px var(--text-shadow);
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: var(--terminal-bg);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+    margin-right: 15px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    color: var(--text-color);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.terminal-content {
+    padding: 20px;
+}
+
+.prompt-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.terminal-input {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-family: 'Fira Code', monospace;
+    font-size: inherit;
+    margin-left: 8px;
+    outline: none;
+    padding: 0;
+    width: 100%;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--text-color);
+    margin-left: 2px;
+}
+
+.prompt {
+    display: flex;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.user { color: var(--text-color); }
+.separator { color: var(--text-dim); }
+.directory { color: var(--text-color); }
+.command-symbol { color: var(--text-dim); }
+
+.blog-list {
+    margin: 20px 0;
+}
+
+.blog-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--text-dim);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blog-item:hover {
+    border-color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.blog-item .title {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.blog-item .description {
+    color: var(--text-dim);
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.blog-item .meta {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-dim);
+}
+
+.blog-item .tags {
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Blog içerik stilleri */
+#blog-content {
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#blog-content h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 1.5em 0 1em 0;
+    font-weight: 600;
+    border-bottom: 1px solid var(--text-dim);
+    padding-bottom: 0.5em;
+}
+
+#blog-content h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 1.5em 0 1em 0;
+    font-weight: 500;
+}
+
+#blog-content h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 1.2em 0 0.8em 0;
+    font-weight: 500;
+}
+
+#blog-content p {
+    margin: 1.2em 0;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+#blog-content code {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    color: #e0e0e0;
+}
+
+#blog-content pre {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1.2em;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#blog-content pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Kod bloğu stilleri */
+pre[class*="language-"] {
+    margin: 1.5em 0;
+    padding: 1.2em;
+    overflow: auto;
+    border-radius: 5px;
+    background: #1e1e1e !important;
+    border: 1px solid var(--text-dim);
+}
+
+code[class*="language-"] {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 0.9em !important;
+    text-shadow: none !important;
+}
+
+/* Kopyalama butonu stilleri */
+div.code-toolbar > .toolbar {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div.code-toolbar:hover > .toolbar {
+    opacity: 1;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button {
+    background: var(--text-color) !important;
+    color: var(--bg-color) !important;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button:hover {
+    background: var(--text-dim) !important;
+}
+
+/* Yardım mesajı stilleri */
+.help-content {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid var(--text-dim);
+    border-radius: 4px;
+}
+
+.help-content .title {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.help-content .commands {
+    color: var(--text-dim);
+    white-space: pre;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Terminal input aktifken arka plan rengini değiştirme */
+.terminal-input:focus {
+    background: none;
+}
+
+/* Hata mesajı stilleri */
+.error-message {
+    padding: 15px;
+    border: 1px solid var(--text-error);
+    border-radius: 4px;
+    color: var(--text-error);
+    margin: 20px 0;
+}
+
+.error-message .title {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
